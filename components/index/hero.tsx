@@ -95,7 +95,7 @@ export default function Hero() {
             top={"-20%"}
             left={0}
             zIndex={-1}
-            color={useColorModeValue("cyan.50", "cyan.400")}
+            color={useColorModeValue("cyan.100", "cyan.400")}
           />
           <Box
             position={"relative"}
