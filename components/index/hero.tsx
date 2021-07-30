@@ -13,6 +13,8 @@ import {
   IconProps,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { FaCalendarCheck } from "react-icons/fa";
+import { BsCaretDownFill } from "react-icons/bs";
 
 export default function Hero() {
   return (
@@ -37,7 +39,7 @@ export default function Hero() {
                 width: "full",
                 height: "30%",
                 position: "absolute",
-                bottom: 1,
+                bottom: 2,
                 left: 0,
                 bg: "cyan.400",
                 zIndex: -1,
@@ -67,17 +69,18 @@ export default function Hero() {
               colorScheme={"red"}
               bg={"cyan.400"}
               _hover={{ bg: "cyan.500" }}
+              leftIcon={<FaCalendarCheck color={"gray.300"} />}
             >
-              Get started
+              Book a session
             </Button>
             <Button
               rounded={"full"}
               size={"lg"}
               fontWeight={"normal"}
               px={6}
-              leftIcon={<PlayIcon h={4} w={4} color={"gray.300"} />}
+              leftIcon={<BsCaretDownFill color={"gray.300"} />}
             >
-              How It Works
+              Learn more
             </Button>
           </Stack>
         </Stack>
