@@ -13,6 +13,7 @@ import {
   useBreakpointValue,
   IconProps,
   Icon,
+  useToast,
 } from "@chakra-ui/react";
 
 const avatars = [
@@ -39,6 +40,9 @@ const avatars = [
 ];
 
 export default function Contact() {
+  const toast = useToast();
+  const handleChange = (event) => setValue(event.target.value);
+
   return (
     <Box position={"relative"}>
       <Container
@@ -167,7 +171,7 @@ export default function Contact() {
                 }}
               />
               <Input
-                placeholder="+1 (___) __-___-___"
+                placeholder="Your message goes here"
                 bg={"gray.100"}
                 border={0}
                 color={"gray.500"}
@@ -175,9 +179,10 @@ export default function Contact() {
                   color: "gray.500",
                 }}
               />
-              <Button fontFamily={"heading"} bg={"gray.200"} color={"gray.800"}>
-                Upload CV
-              </Button>
+              <div
+                className="g-recaptcha"
+                data-sitekey="6Lf7tyUTAAAAAOC6OuW93R6vSgqCOl_C_eHyIEar"
+              ></div>
             </Stack>
             <Button
               fontFamily={"heading"}
