@@ -20,6 +20,6 @@
     "**/*.tsx",
     "pages/_error.js",
     "components/index/contact.tsx"
-  ],
+, "pages/api/mail.js"  ],
   "exclude": ["node_modules"]
 }

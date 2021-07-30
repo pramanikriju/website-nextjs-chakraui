@@ -5,6 +5,7 @@ import {
   Heading,
   Text,
   Container,
+  Center,
   Input,
   Button,
   SimpleGrid,
@@ -15,6 +16,8 @@ import {
   Icon,
   useToast,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const avatars = [
   {
@@ -38,10 +41,39 @@ const avatars = [
     url: "https://bit.ly/code-beast",
   },
 ];
-
+const initialValues = {
+  name: "",
+  email: "",
+  message: "",
+  recaptcha: "",
+};
 export default function Contact() {
-  const toast = useToast();
-  const handleChange = (event) => setValue(event.target.value);
+  const avatar_variant = useBreakpointValue({ base: "md", md: "lg" });
+  //const toast = useToast();
+
+  const [values, setValues] = useState(initialValues);
+
+  function onCaptchaChange(value) {
+    setValues({
+      ...values,
+      recaptcha: value,
+    });
+  }
+
+  const handleInputChange = (e) => {
+    //const name = e.target.name
+    //const value = e.target.value
+    const { name, value } = e.target;
+
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  function handleSubmit() {
+    console.log("Values : ", values);
+  }
 
   return (
     <Box position={"relative"}>
@@ -74,7 +106,7 @@ export default function Contact() {
                   key={avatar.name}
                   name={avatar.name}
                   src={avatar.url}
-                  size={useBreakpointValue({ base: "md", md: "lg" })}
+                  size={avatar_variant}
                   position={"relative"}
                   zIndex={2}
                   _before={{
@@ -153,7 +185,10 @@ export default function Contact() {
           <Box as={"form"} mt={10}>
             <Stack spacing={4}>
               <Input
-                placeholder="Firstname"
+                value={values.name}
+                onChange={handleInputChange}
+                name="name"
+                placeholder="Name"
                 bg={"gray.100"}
                 border={0}
                 color={"gray.500"}
@@ -162,7 +197,10 @@ export default function Contact() {
                 }}
               />
               <Input
-                placeholder="firstname@lastname.io"
+                placeholder="Email"
+                value={values.email}
+                onChange={handleInputChange}
+                name="email"
                 bg={"gray.100"}
                 border={0}
                 color={"gray.500"}
@@ -172,6 +210,9 @@ export default function Contact() {
               />
               <Input
                 placeholder="Your message goes here"
+                value={values.message}
+                onChange={handleInputChange}
+                name="message"
                 bg={"gray.100"}
                 border={0}
                 color={"gray.500"}
@@ -179,14 +220,17 @@ export default function Contact() {
                   color: "gray.500",
                 }}
               />
-              <div
-                className="g-recaptcha"
-                data-sitekey="6Lf7tyUTAAAAAOC6OuW93R6vSgqCOl_C_eHyIEar"
-              ></div>
+              <Center>
+                <ReCAPTCHA
+                  className=""
+                  sitekey="6Lf7tyUTAAAAAOC6OuW93R6vSgqCOl_C_eHyIEar"
+                  onChange={onCaptchaChange}
+                />
+              </Center>
             </Stack>
             <Button
               fontFamily={"heading"}
-              mt={8}
+              mt={4}
               w={"full"}
               bgGradient="linear(to-r, red.400,pink.400)"
               color={"white"}
@@ -194,6 +238,7 @@ export default function Contact() {
                 bgGradient: "linear(to-r, red.400,pink.400)",
                 boxShadow: "xl",
               }}
+              onClick={handleSubmit}
             >
               Submit
             </Button>
