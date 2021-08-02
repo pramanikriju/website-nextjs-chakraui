@@ -30,6 +30,7 @@ function StatsCard(props: StatsCardProps) {
       border={"1px solid"}
       borderColor={useColorModeValue("gray.800", "gray.500")}
       rounded={"lg"}
+      style={{ backdropFilter: "blur(30px)" }}
     >
       <Flex justifyContent={"space-between"}>
         <Box pl={{ base: 2, md: 4 }}>

@@ -58,6 +58,7 @@ export default function Footer() {
         align={{ base: "center", md: "center" }}
       >
         <Text>© {new Date().getFullYear()} Riju Pramanik</Text>
+        <Text>Made with NextJS and Stripe</Text>
         <Stack direction={"row"} spacing={6}>
           <SocialButton label={"Twitter"} href={"#"}>
             <FaTwitter />

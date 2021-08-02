@@ -61,6 +61,9 @@ export default function Navbar() {
             color={useColorModeValue("gray.800", "white")}
             fontSize="3xl"
             isTruncated
+            //bgGradient="linear(to-r, cyan.500,teal.400)"
+            bg="cyan.500"
+            bgClip="text"
           >
             Riju Pramanik
           </Heading>

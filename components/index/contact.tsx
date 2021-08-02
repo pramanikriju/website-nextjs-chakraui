@@ -15,6 +15,7 @@ import {
   IconProps,
   Icon,
   useToast,
+  Spinner,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -52,6 +53,7 @@ export default function Contact() {
   //const toast = useToast();
 
   const [values, setValues] = useState(initialValues);
+  const [loading, setLoading] = useState(false);
 
   function onCaptchaChange(value) {
     setValues({
@@ -72,6 +74,7 @@ export default function Contact() {
   };
 
   function handleSubmit() {
+    setLoading(true);
     console.log("Values : ", values);
   }
 
@@ -89,15 +92,15 @@ export default function Contact() {
             lineHeight={1.1}
             fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
           >
-            Senior web designers{" "}
+            Trusted by industry giants{" "}
             <Text
               as={"span"}
-              bgGradient="linear(to-r, red.400,pink.400)"
+              bgGradient="linear(to-r, cyan.400,teal.400)"
               bgClip="text"
             >
               &
             </Text>{" "}
-            Full-Stack Developers
+            Startups alike
           </Heading>
           <Stack direction={"row"} spacing={4} align={"center"}>
             <AvatarGroup>
@@ -115,7 +118,7 @@ export default function Contact() {
                     height: "full",
                     rounded: "full",
                     transform: "scale(1.125)",
-                    bgGradient: "linear(to-bl, red.400,pink.400)",
+                    bgGradient: "linear(to-bl, cyan.400,teal.400)",
                     position: "absolute",
                     zIndex: -1,
                     top: 0,
@@ -144,7 +147,7 @@ export default function Contact() {
                 height: "full",
                 rounded: "full",
                 transform: "scale(1.125)",
-                bgGradient: "linear(to-bl, orange.400,yellow.400)",
+                bgGradient: "linear(to-bl, orange.400,pink.400)",
                 position: "absolute",
                 zIndex: -1,
                 top: 0,
@@ -168,7 +171,7 @@ export default function Contact() {
               lineHeight={1.1}
               fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
             >
-              Join our team
+              Get in touch
               <Text
                 as={"span"}
                 bgGradient="linear(to-r, red.400,pink.400)"
@@ -232,15 +235,15 @@ export default function Contact() {
               fontFamily={"heading"}
               mt={4}
               w={"full"}
-              bgGradient="linear(to-r, red.400,pink.400)"
+              bgGradient="linear(to-r, cyan.400,teal.400)"
               color={"white"}
               _hover={{
-                bgGradient: "linear(to-r, red.400,pink.400)",
+                bgGradient: "linear(to-r, cyan.400,teal.400)",
                 boxShadow: "xl",
               }}
               onClick={handleSubmit}
             >
-              Submit
+              {loading && <Spinner color="white" mr={3} />} Submit
             </Button>
           </Box>
           form
