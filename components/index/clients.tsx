@@ -1,40 +1,92 @@
 import React from "react";
-import Slider from "react-slick";
 import { useBreakpointValue } from "@chakra-ui/react";
+import ClientCard from "./clientCard";
+//Slider imports
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/swiper.min.css";
+import "swiper/components/pagination/pagination.min.css";
+
+// import Swiper core and required modules
+import SwiperCore, { Pagination } from "swiper/core";
+
+// install Swiper modules
+SwiperCore.use([Pagination]);
+
+const client_data = [
+  {
+    id: 1,
+    name: "AskMyAdvisor",
+    img: "https://d8po3df1zm5p4.cloudfront.net/a6029a27-8007-4bce-92b7-f6573fb9eb60/img/full_logo.png",
+    description: "",
+    url: "https://app.askmyadvisor.co",
+    technology: ["Laravel", "React Native", "AWS"],
+  },
+  {
+    id: 2,
+    name: "AskMyAdvisor",
+    img: "https://d8po3df1zm5p4.cloudfront.net/a6029a27-8007-4bce-92b7-f6573fb9eb60/img/full_logo.png",
+    description: "",
+    url: "https://app.askmyadvisor.co",
+    technology: ["Laravel", "React Native", "AWS"],
+  },
+  {
+    id: 3,
+    name: "AskMyAdvisor",
+    img: "https://d8po3df1zm5p4.cloudfront.net/a6029a27-8007-4bce-92b7-f6573fb9eb60/img/full_logo.png",
+    description: "",
+    url: "https://app.askmyadvisor.co",
+    technology: ["Laravel", "React Native", "AWS"],
+  },
+  {
+    id: 4,
+    name: "AskMyAdvisor",
+    img: "https://d8po3df1zm5p4.cloudfront.net/a6029a27-8007-4bce-92b7-f6573fb9eb60/img/full_logo.png",
+    description: "",
+    url: "https://app.askmyadvisor.co",
+    technology: ["Laravel", "React Native", "AWS"],
+  },
+  {
+    id: 5,
+    name: "AskMyAdvisor",
+    img: "https://d8po3df1zm5p4.cloudfront.net/a6029a27-8007-4bce-92b7-f6573fb9eb60/img/full_logo.png",
+    description: "",
+    url: "https://app.askmyadvisor.co",
+    technology: ["Laravel", "React Native", "AWS"],
+  },
+  {
+    id: 6,
+    name: "AskMyAdvisor",
+    img: "https://d8po3df1zm5p4.cloudfront.net/a6029a27-8007-4bce-92b7-f6573fb9eb60/img/full_logo.png",
+    description: "",
+    url: "https://app.askmyadvisor.co",
+    technology: ["Laravel", "React Native", "AWS"],
+  },
+];
 
 export default function Clients() {
-  const variant = useBreakpointValue({ base: 1, md: 3 });
-  var settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: variant,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    pauseOnHover: true,
-  };
+  const variant = useBreakpointValue({ base: 1, md: 3, lg: 5 });
+
   return (
-    <Slider {...settings}>
-      <div>
-        <h3>1</h3>
-      </div>
-      <div>
-        <h3>2</h3>
-      </div>
-      <div>
-        <h3>3</h3>
-      </div>
-      <div>
-        <h3>4</h3>
-      </div>
-      <div>
-        <h3>5</h3>
-      </div>
-      <div>
-        <h3>6</h3>
-      </div>
-    </Slider>
+    <Swiper
+      slidesPerView={variant}
+      //spaceBetween={30}
+      className="mySwiper"
+      //loop="true"
+      loop={true}
+      pagination={{
+        clickable: true,
+      }}
+      autoplay={{
+        delay: 500,
+      }}
+    >
+      {client_data.map((item, i) => (
+        <SwiperSlide key={item.id}>
+          <ClientCard />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }
