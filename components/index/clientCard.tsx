@@ -15,6 +15,8 @@ export default function ClientCard() {
   return (
     <Center py={6}>
       <Box
+        border="1px"
+        borderColor="cyan.200"
         maxW={"320px"}
         w={"full"}
         bg={useColorModeValue("white", "gray.900")}

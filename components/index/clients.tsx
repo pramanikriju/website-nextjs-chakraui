@@ -65,7 +65,7 @@ export default function Clients() {
   //const variant = useBreakpointValue({ base: 1, md: 3, lg: 5 });
 
   return (
-    <Box py={5}>
+    <Box py={5} maxW={"10xl"}>
       <Swiper
         slidesPerView={1}
         breakpoints={{
@@ -76,7 +76,7 @@ export default function Clients() {
             slidesPerView: 2,
           },
           "1024": {
-            slidesPerView: 5,
+            slidesPerView: 4,
           },
         }}
         pagination={{
