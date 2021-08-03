@@ -1,3 +1,7 @@
 .swiper-pagination {
-  margin-top: 1rem;
+  bottom: 1px !important;
+}
+
+.swiper-container {
+  padding-bottom: 30px !important;
 }

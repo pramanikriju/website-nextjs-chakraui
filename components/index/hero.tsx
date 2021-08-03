@@ -6,7 +6,6 @@ import {
   Heading,
   Text,
   Button,
-  Image,
   Icon,
   IconButton,
   createIcon,
@@ -15,6 +14,8 @@ import {
 } from "@chakra-ui/react";
 import { FaCalendarCheck } from "react-icons/fa";
 import { BsCaretDownFill } from "react-icons/bs";
+import Image from "next/image";
+import splashImg from "../../public/img/main.jpg";
 
 export default function Hero() {
   return (
@@ -122,13 +123,15 @@ export default function Hero() {
             /> */}
             <Image
               alt={"Hero Image"}
-              fit={"cover"}
-              align={"center"}
-              w={"100%"}
-              h={"100%"}
-              src={
-                "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-              }
+              //fit={"cover"}
+              //align={"center"}
+              // w={"100%"}
+              // h={"100%"}
+              layout="fill"
+              objectFit="cover"
+              priority={true}
+              quality={100}
+              src={splashImg}
             />
           </Box>
         </Flex>

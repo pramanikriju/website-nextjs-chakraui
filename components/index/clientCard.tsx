@@ -17,7 +17,7 @@ export default function ClientCard() {
       <Box
         border="1px"
         borderColor="cyan.200"
-        maxW={"320px"}
+        maxW={"330px"}
         w={"full"}
         bg={useColorModeValue("white", "gray.900")}
         boxShadow={"xl"}
