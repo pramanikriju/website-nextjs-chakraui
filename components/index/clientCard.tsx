@@ -44,7 +44,7 @@ export default function ClientCard() {
           px={3}
         >
           Actress, musician, songwriter and artist. PM for work inquires or{" "}
-          <Link href={"#"} color={"blue.400"}>
+          <Link href={"#"} color={"cyan.400"}>
             #tag
           </Link>{" "}
           me in your posts
@@ -92,7 +92,7 @@ export default function ClientCard() {
             flex={1}
             fontSize={"sm"}
             rounded={"full"}
-            bg={"blue.400"}
+            bg={"cyan.400"}
             color={"white"}
             boxShadow={
               "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"

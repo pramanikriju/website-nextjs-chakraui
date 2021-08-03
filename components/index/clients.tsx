@@ -1,12 +1,8 @@
 import React from "react";
-import { useBreakpointValue } from "@chakra-ui/react";
+import { Box, useBreakpointValue } from "@chakra-ui/react";
 import ClientCard from "./clientCard";
 //Slider imports
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/swiper.min.css";
-import "swiper/components/pagination/pagination.min.css";
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination } from "swiper/core";
@@ -66,27 +62,38 @@ const client_data = [
 ];
 
 export default function Clients() {
-  const variant = useBreakpointValue({ base: 1, md: 3, lg: 5 });
+  //const variant = useBreakpointValue({ base: 1, md: 3, lg: 5 });
 
   return (
-    <Swiper
-      slidesPerView={variant}
-      //spaceBetween={30}
-      className="mySwiper"
-      //loop="true"
-      loop={true}
-      pagination={{
-        clickable: true,
-      }}
-      autoplay={{
-        delay: 500,
-      }}
-    >
-      {client_data.map((item, i) => (
-        <SwiperSlide key={item.id}>
-          <ClientCard />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <Box py={5}>
+      <Swiper
+        slidesPerView={1}
+        breakpoints={{
+          "640": {
+            slidesPerView: 1,
+          },
+          "750": {
+            slidesPerView: 2,
+          },
+          "1024": {
+            slidesPerView: 5,
+          },
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 2500,
+          //disableOnInteraction: false,
+        }}
+        loop={true}
+      >
+        {client_data.map((item, i) => (
+          <SwiperSlide key={item.id}>
+            <ClientCard />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Box>
   );
 }
