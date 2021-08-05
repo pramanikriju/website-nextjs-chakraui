@@ -73,7 +73,6 @@ export default function Clients() {
           Portfolio
         </Heading>
         <br />
-        <Heading colorScheme="gray">Trusted all over the globe</Heading>
       </Center>
       <Swiper
         slidesPerView={1}

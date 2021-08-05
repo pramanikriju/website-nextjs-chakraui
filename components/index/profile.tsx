@@ -1,31 +1,80 @@
 import {
-  Box,
-  Container,
-  Center,
-  useColorModeValue,
   Heading,
+  Avatar,
+  Box,
+  Center,
+  Image,
+  Flex,
   Text,
   Stack,
-  Image,
+  Button,
+  useColorModeValue,
+  Container,
 } from "@chakra-ui/react";
 
-const IMAGE =
-  "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80";
-
-export default function Profile() {
+export default function SocialProfileWithImage() {
   return (
-    <Container maxW={"5xl"} py={12}>
-      <Center py={12}>
+    <Container maxW={"5xl"}>
+      <Center py={6}>
         <Box
-          role={"group"}
-          p={6}
+          maxW={"full"}
           w={"full"}
           bg={useColorModeValue("white", "gray.800")}
           boxShadow={"2xl"}
-          rounded={"lg"}
-          pos={"relative"}
-          zIndex={1}
-        ></Box>
+          rounded={"md"}
+        >
+          <Flex justify={"center"}>
+            <Avatar
+              size={"2xl"}
+              src={
+                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+              }
+              zIndex={2}
+              alt={"Author"}
+              css={{
+                border: "2px solid white",
+              }}
+            />
+          </Flex>
+
+          <Box p={6}>
+            <Stack spacing={0} align={"center"} mb={5}>
+              <Heading fontSize={"2xl"} fontWeight={500} fontFamily={"body"}>
+                John Doe
+              </Heading>
+              <Text color={"gray.500"}>Frontend Developer</Text>
+            </Stack>
+
+            <Stack direction={"row"} justify={"center"} spacing={6}>
+              <Stack spacing={0} align={"center"}>
+                <Text fontWeight={600}>23k</Text>
+                <Text fontSize={"sm"} color={"gray.500"}>
+                  Followers
+                </Text>
+              </Stack>
+              <Stack spacing={0} align={"center"}>
+                <Text fontWeight={600}>23k</Text>
+                <Text fontSize={"sm"} color={"gray.500"}>
+                  Followers
+                </Text>
+              </Stack>
+            </Stack>
+
+            <Button
+              w={"full"}
+              mt={8}
+              bg={useColorModeValue("#151f21", "gray.900")}
+              color={"white"}
+              rounded={"md"}
+              _hover={{
+                transform: "translateY(-2px)",
+                boxShadow: "lg",
+              }}
+            >
+              Follow
+            </Button>
+          </Box>
+        </Box>
       </Center>
     </Container>
   );

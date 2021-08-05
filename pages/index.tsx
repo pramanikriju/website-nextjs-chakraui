@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       <hr />
       <Feature />
-      <Profile />
+      {/* <Profile /> */}
       <Clients />
       <Stats />
 
