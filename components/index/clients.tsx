@@ -1,14 +1,14 @@
 import React from "react";
-import { Box, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Center, Heading } from "@chakra-ui/react";
 import ClientCard from "./clientCard";
 //Slider imports
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // import Swiper core and required modules
-import SwiperCore, { Pagination } from "swiper/core";
+import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper/core";
 
 // install Swiper modules
-SwiperCore.use([Pagination]);
+SwiperCore.use([Pagination, Navigation, Autoplay]);
 
 const client_data = [
   {
@@ -64,6 +64,17 @@ const client_data = [
 export default function Clients() {
   return (
     <Box py={8} maxW={"10xl"}>
+      <Center>
+        <Heading
+          fontWeight={600}
+          fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
+          lineHeight={"110%"}
+        >
+          Portfolio
+        </Heading>
+        <br />
+        <Heading colorScheme="gray">Trusted all over the globe</Heading>
+      </Center>
       <Swiper
         slidesPerView={1}
         breakpoints={{
@@ -76,7 +87,7 @@ export default function Clients() {
           "1024": {
             slidesPerView: 4,
           },
-          "1400": {
+          "1600": {
             slidesPerView: 5,
           },
         }}
@@ -84,10 +95,12 @@ export default function Clients() {
           clickable: true,
         }}
         autoplay={{
-          delay: 2500,
-          //disableOnInteraction: false,
+          delay: 3500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         }}
         loop={true}
+        navigation
       >
         {client_data.map((item, i) => (
           <SwiperSlide key={item.id}>

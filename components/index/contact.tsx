@@ -100,7 +100,7 @@ export default function Contact() {
             >
               &
             </Text>{" "}
-            Startups alike
+            startups alike
           </Heading>
           <Stack direction={"row"} spacing={4} align={"center"}>
             <AvatarGroup>
