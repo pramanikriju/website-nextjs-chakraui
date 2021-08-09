@@ -27,6 +27,7 @@ import {
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Box>
       <Flex
@@ -35,7 +36,6 @@ export default function Navbar() {
         minH={"60px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
-        borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
@@ -54,12 +54,19 @@ export default function Navbar() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        <Flex
+          flex={{ base: 1 }}
+          justify={{ base: "center", md: "start" }}
+          align={"center"}
+        >
           <Heading
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
-            fontSize="3xl"
+            fontSize={useBreakpointValue({
+              base: "3xl",
+              md: "4xl",
+            })}
             isTruncated
             //bgGradient="linear(to-r, cyan.500,teal.400)"
             bg="cyan.500"
@@ -78,6 +85,7 @@ export default function Navbar() {
           justify={"flex-end"}
           direction={"row"}
           spacing={6}
+          //display={{ base: "none", md: "flex" }}
         >
           <Button onClick={toggleColorMode}>
             {colorMode === "light" ? "🌙" : "☀️"}
@@ -106,7 +114,7 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"sm"}
+                fontSize={"lg"}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -179,6 +187,8 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 };
 
 const MobileNav = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}
@@ -188,6 +198,16 @@ const MobileNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
+      <Stack
+        flex={{ base: 1, md: 0 }}
+        justify={"center"}
+        direction={"row"}
+        spacing={6}
+      >
+        <Button onClick={toggleColorMode}>
+          {colorMode === "light" ? "Dark Mode 🌙" : "Light Mode☀️"}
+        </Button>
+      </Stack>
     </Stack>
   );
 };
