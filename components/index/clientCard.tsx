@@ -10,8 +10,24 @@ import {
   Badge,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 
-export default function ClientCard() {
+interface item {
+  id: number;
+  name: string;
+  img: string;
+  description: string;
+  url: string;
+  technology: string[];
+}
+interface clientProps {
+  item: item;
+}
+
+export default function ClientCard(props: clientProps) {
+  const item = props.item;
+  let bgtagcolor = useColorModeValue("gray.50", "gray.800");
   return (
     <Center py={6}>
       <Box
@@ -25,17 +41,27 @@ export default function ClientCard() {
         p={6}
         textAlign={"center"}
       >
-        <Avatar
+        <Box mb={4} pos={"relative"}>
+          <Image
+            src={item.img}
+            alt="Picture of the author"
+            //layout="fill"
+            //objectFit=""
+            height={200}
+            width={1000}
+          />
+        </Box>
+        <hr />
+
+        {/* <Avatar
           size={"xl"}
-          src={
-            "https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-          }
+          src={"https://placedog.net/500?random"}
           alt={"Avatar Alt"}
           mb={4}
           pos={"relative"}
-        />
-        <Heading fontSize={"2xl"} fontFamily={"body"}>
-          Lindsey James
+        /> */}
+        <Heading fontSize={"2xl"} fontFamily={"body"} mt={4}>
+          {item.name}
         </Heading>
         <Text fontWeight={600} color={"gray.500"} mb={4}>
           @lindsey_jam3s
@@ -53,6 +79,11 @@ export default function ClientCard() {
         </Text>
 
         <Stack align={"center"} justify={"center"} direction={"row"} mt={6}>
+          {item.technology.map((tech, i) => {
+            <Badge px={2} py={1} bg={bgtagcolor} fontWeight={"400"}>
+              {tech} test
+            </Badge>;
+          })}
           <Badge
             px={2}
             py={1}

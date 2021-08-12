@@ -40,6 +40,38 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://unpkg.com/swiper/swiper-bundle.min.css"
           />
+
+          <meta name="title" content="Riju Pramanik | Full Stack Developer" />
+          <meta
+            name="description"
+            content="I'm Riju Pramanik, a full-stack developer and technical consultant based out of India 🇮🇳"
+          />
+
+          {/* <!-- Open Graph / Facebook --/> */}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://riju.co/" />
+          <meta
+            property="og:title"
+            content="Riju Pramanik | Full Stack Developer"
+          />
+          <meta
+            property="og:description"
+            content="I'm Riju Pramanik, a full-stack developer and technical consultant based out of India 🇮🇳"
+          />
+          <meta property="og:image" content="" />
+
+          {/* <!-- Twitter --/> */}
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://riju.co/" />
+          <meta
+            property="twitter:title"
+            content="Riju Pramanik | Full Stack Developer"
+          />
+          <meta
+            property="twitter:description"
+            content="I'm Riju Pramanik, a full-stack developer and technical consultant based out of India 🇮🇳"
+          />
+          <meta property="twitter:image" content="" />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />

@@ -1,0 +1,51 @@
+const clientsData = [
+  {
+    id: 1,
+    name: "AskMyAdvisor",
+    img: "/img/clients/askmyadvisor.png",
+    description: "",
+    url: "https://app.askmyadvisor.co",
+    technology: ["Laravel", "React Native", "AWS"],
+  },
+  {
+    id: 2,
+    name: "AskMyAdvisor",
+    img: "/img/clients/askmyadvisor.png",
+    description: "",
+    url: "https://app.askmyadvisor.co",
+    technology: ["Laravel", "React Native", "AWS"],
+  },
+  {
+    id: 3,
+    name: "AskMyAdvisor",
+    img: "/img/clients/askmyadvisor.png",
+    description: "",
+    url: "https://app.askmyadvisor.co",
+    technology: ["Laravel", "React Native", "AWS"],
+  },
+  {
+    id: 4,
+    name: "AskMyAdvisor",
+    img: "/img/clients/askmyadvisor.png",
+    description: "",
+    url: "https://app.askmyadvisor.co",
+    technology: ["Laravel", "React Native", "AWS"],
+  },
+  {
+    id: 5,
+    name: "AskMyAdvisor",
+    img: "/img/clients/askmyadvisor.png",
+    description: "",
+    url: "https://app.askmyadvisor.co",
+    technology: ["Laravel", "React Native", "AWS"],
+  },
+  {
+    id: 6,
+    name: "AskMyAdvisor",
+    img: "/img/clients/askmyadvisor.png",
+    description: "",
+    url: "https://app.askmyadvisor.co",
+    technology: ["Laravel", "React Native", "AWS"],
+  },
+];
+export default clientsData;
