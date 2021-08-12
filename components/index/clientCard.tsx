@@ -1,6 +1,6 @@
 import {
   Heading,
-  Avatar,
+  Flex,
   Box,
   Center,
   Text,
@@ -41,16 +41,21 @@ export default function ClientCard(props: clientProps) {
         p={6}
         textAlign={"center"}
       >
-        <Box mb={4} pos={"relative"}>
+        <Flex
+          mb={4}
+          pos={"relative"}
+          className="unset-img"
+          align="center"
+          justify="center"
+          minHeight="100px"
+        >
           <Image
             src={item.img}
             alt="Picture of the author"
-            //layout="fill"
-            //objectFit=""
-            height={200}
-            width={1000}
+            layout="fill"
+            className="custom-img"
           />
-        </Box>
+        </Flex>
         <hr />
 
         {/* <Avatar
@@ -60,11 +65,11 @@ export default function ClientCard(props: clientProps) {
           mb={4}
           pos={"relative"}
         /> */}
-        <Heading fontSize={"2xl"} fontFamily={"body"} mt={4}>
+        <Heading fontSize={"2xl"} fontFamily={"body"} mt={6} isTruncated>
           {item.name}
         </Heading>
         <Text fontWeight={600} color={"gray.500"} mb={4}>
-          @lindsey_jam3s
+          Technical Consultant
         </Text>
         <Text
           textAlign={"center"}
@@ -79,35 +84,11 @@ export default function ClientCard(props: clientProps) {
         </Text>
 
         <Stack align={"center"} justify={"center"} direction={"row"} mt={6}>
-          {item.technology.map((tech, i) => {
-            <Badge px={2} py={1} bg={bgtagcolor} fontWeight={"400"}>
-              {tech} test
-            </Badge>;
-          })}
-          <Badge
-            px={2}
-            py={1}
-            bg={useColorModeValue("gray.50", "gray.800")}
-            fontWeight={"400"}
-          >
-            #art
-          </Badge>
-          <Badge
-            px={2}
-            py={1}
-            bg={useColorModeValue("gray.50", "gray.800")}
-            fontWeight={"400"}
-          >
-            #photography
-          </Badge>
-          <Badge
-            px={2}
-            py={1}
-            bg={useColorModeValue("gray.50", "gray.800")}
-            fontWeight={"400"}
-          >
-            #music
-          </Badge>
+          {item.technology.map((tech, i) => (
+            <Badge px={2} py={1} bg={bgtagcolor} fontWeight={"400"} key={i}>
+              #{tech}
+            </Badge>
+          ))}
         </Stack>
 
         <Stack mt={8} direction={"row"} spacing={4}>

@@ -5,3 +5,17 @@
 .swiper-container {
   padding-bottom: 30px !important;
 }
+.custom-img {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.unset-img {
+  width: 100%;
+  max-height: 100px;
+}
+.unset-img > div {
+  position: unset !important;
+}

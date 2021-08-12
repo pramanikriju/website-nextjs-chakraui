@@ -59,10 +59,11 @@ export default function SplitWithImage() {
           >
             Why me
           </Text>
-          <Heading>A digital Product design agency</Heading>
+          <Heading>A digital experience developer</Heading>
           <Text color={"gray.500"} fontSize={"lg"}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore
+            Hi, I&apos;m Riju Pramanik, a full stack developer and designer
+            based out of India. I help design and curate rich digital
+            experience, both online and on mobile devices.
           </Text>
           <Stack
             spacing={4}
