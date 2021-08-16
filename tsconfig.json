@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -19,7 +19,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/_error.js",
-    "components/index/contact.tsx"
-, "pages/api/mail.js"  ],
+    "components/index/contact.tsx",
+    "pages/api/mail.js"
+  ],
   "exclude": ["node_modules"]
 }

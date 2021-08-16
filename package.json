@@ -21,7 +21,8 @@
     "react-google-recaptcha": "^2.1.0",
     "react-icons": "^4.2.0",
     "sass": "^1.37.2",
-    "swiper": "^6.8.1"
+    "swiper": "^6.8.1",
+    "validatorjs": "^3.22.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.16",

@@ -50,7 +50,7 @@ const initialValues = {
 };
 export default function Contact() {
   const avatar_variant = useBreakpointValue({ base: "md", md: "lg" });
-  //const toast = useToast();
+  const toast = useToast();
 
   const [values, setValues] = useState(initialValues);
   const [loading, setLoading] = useState(false);
@@ -63,8 +63,6 @@ export default function Contact() {
   }
 
   const handleInputChange = (e) => {
-    //const name = e.target.name
-    //const value = e.target.value
     const { name, value } = e.target;
 
     setValues({
@@ -76,6 +74,51 @@ export default function Contact() {
   function handleSubmit() {
     setLoading(true);
     console.log("Values : ", values);
+    const isEmpty = !Object.values(values).some((x) => x !== null && x !== "");
+    if (isEmpty) {
+      toast({
+        title: "Missing Values",
+        description: "Some inputs are missing. Dont forget the captcha",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+      setLoading(false);
+      return false;
+    }
+
+    console.log("Sending API Call");
+
+    fetch("/api/mail", {
+      body: JSON.stringify(values),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          toast({
+            title: "Message Sent",
+            description: "I'll get back to you shortly",
+            status: "success",
+            duration: 5000,
+            isClosable: true,
+          });
+          setLoading(false);
+        } else {
+          toast({
+            title: "Missing Values",
+            description: "Some inputs are missing. Dont forget the captcha",
+            status: "error",
+            duration: 5000,
+            isClosable: true,
+          });
+        }
+      });
+
+    //result.user => 'Ada Lovelace'
   }
 
   return (
