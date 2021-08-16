@@ -11,22 +11,15 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 
-interface item {
-  id: number;
-  name: string;
-  img: string;
-  description: string;
-  url: string;
-  technology: string[];
-}
-interface clientProps {
+import item from "../../types/client";
+
+interface ClientProps {
   item: item;
 }
 
-export default function ClientCard(props: clientProps) {
-  const item = props.item;
+export default function ClientCard(props: ClientProps) {
+  const client = props.item;
   let bgtagcolor = useColorModeValue("gray.50", "gray.800");
   return (
     <Center py={6}>
@@ -50,7 +43,7 @@ export default function ClientCard(props: clientProps) {
           minHeight="100px"
         >
           <Image
-            src={item.img}
+            src={client.img}
             alt="Picture of the author"
             layout="fill"
             className="custom-img"
@@ -66,10 +59,10 @@ export default function ClientCard(props: clientProps) {
           pos={"relative"}
         /> */}
         <Heading fontSize={"2xl"} fontFamily={"body"} mt={6} isTruncated>
-          {item.name}
+          {client.name}
         </Heading>
         <Text fontWeight={600} color={"gray.500"} mb={4}>
-          Technical Consultant
+          {client.rel ?? "Technical Consultant"}
         </Text>
         <Text
           textAlign={"center"}
@@ -84,7 +77,7 @@ export default function ClientCard(props: clientProps) {
         </Text>
 
         <Stack align={"center"} justify={"center"} direction={"row"} mt={6}>
-          {item.technology.map((tech, i) => (
+          {client.technology.map((tech, i) => (
             <Badge px={2} py={1} bg={bgtagcolor} fontWeight={"400"} key={i}>
               #{tech}
             </Badge>

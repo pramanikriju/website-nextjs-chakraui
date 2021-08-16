@@ -63,7 +63,7 @@ export default function SplitWithImage() {
           <Text color={"gray.500"} fontSize={"lg"}>
             Hi, I&apos;m Riju Pramanik, a full stack developer and designer
             based out of India. I help design and curate rich digital
-            experience, both online and on mobile devices.
+            experiences, both online and on mobile devices.
           </Text>
           <Stack
             spacing={4}
