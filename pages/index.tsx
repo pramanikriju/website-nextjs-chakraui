@@ -4,6 +4,7 @@ import Stats from "../components/index/stats";
 import Contact from "../components/index/contact";
 import Clients from "../components/index/clients";
 import Profile from "../components/index/profile";
+import Pricing from "../components/index/pricing";
 import Head from "next/head";
 
 export default function Home() {
@@ -17,8 +18,9 @@ export default function Home() {
       <Feature />
       {/* <Profile /> */}
       <Clients />
-      <Stats />
 
+      <Pricing />
+      <Stats />
       <Contact />
     </div>
   );

@@ -11,7 +11,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
-
+import { ImLocation } from "react-icons/im";
 import item from "../../types/client";
 
 interface ClientProps {
@@ -92,8 +92,9 @@ export default function ClientCard(props: ClientProps) {
             _focus={{
               bg: "gray.200",
             }}
+            leftIcon={<ImLocation />}
           >
-            Message
+            {client.location ?? "Kolkata, IN"}
           </Button>
           <Button
             flex={1}

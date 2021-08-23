@@ -5,5 +5,6 @@ export default interface Item {
   img: string;
   description: string;
   url: string;
+  location: string;
   technology: string[];
 }

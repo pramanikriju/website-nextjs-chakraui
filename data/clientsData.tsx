@@ -3,10 +3,12 @@ const clientsData = [
     id: 1,
     name: "AskMyAdvisor",
     img: "/img/clients/askmyadvisor.png",
-    rel: "Technical Lead",
-    description: "",
+    rel: "Technical Architect",
+    description:
+      "Technical architect for Seattle based SaaS, AskMyAdvisor™. I designed and developed their entire architecture",
     url: "https://app.askmyadvisor.co",
     technology: ["Laravel", "React Native", "AWS"],
+    location: "Seattle, USA",
   },
   {
     id: 2,
