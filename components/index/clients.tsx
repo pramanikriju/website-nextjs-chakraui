@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Center, Heading } from "@chakra-ui/react";
+import { Box, Center, Heading, Text } from "@chakra-ui/react";
 import ClientCard from "./clientCard";
 import client_data from "../../data/clientsData";
 
@@ -23,7 +23,11 @@ export default function Clients() {
         >
           Portfolio
         </Heading>
-        <br />
+      </Center>
+      <Center>
+        <Text fontSize="lg" color={"gray.500"}>
+          Expertise across different domains
+        </Text>
       </Center>
       <Swiper
         slidesPerView={1}

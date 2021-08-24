@@ -33,7 +33,11 @@ export default function Pricing() {
   return (
     <Box py={12}>
       <VStack spacing={2} textAlign="center">
-        <Heading as="h1" fontSize="4xl">
+        <Heading
+          fontWeight={600}
+          fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
+          lineHeight={"110%"}
+        >
           Services that fit your need
         </Heading>
         <Text fontSize="lg" color={"gray.500"}>
@@ -51,7 +55,7 @@ export default function Pricing() {
         <PriceWrapper>
           <Box py={4} px={12}>
             <Text fontWeight="500" fontSize="2xl">
-              Hobby
+              Bug Fixes
             </Text>
             <HStack justifyContent="center">
               <Text fontSize="3xl" fontWeight="600">
@@ -167,14 +171,14 @@ export default function Pricing() {
         <PriceWrapper>
           <Box py={4} px={12}>
             <Text fontWeight="500" fontSize="2xl">
-              Scale
+              Retainer
             </Text>
             <HStack justifyContent="center">
               <Text fontSize="3xl" fontWeight="600">
                 $
               </Text>
               <Text fontSize="5xl" fontWeight="900">
-                349
+                999
               </Text>
               <Text fontSize="3xl" color="gray.500">
                 /month
