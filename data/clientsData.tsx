@@ -18,6 +18,7 @@ const clientsData = [
     description: "",
     url: "https://app.askmyadvisor.co",
     technology: ["Laravel", "React Native", "AWS"],
+    location: "India 🇮🇳",
   },
   {
     id: 3,
@@ -27,6 +28,7 @@ const clientsData = [
     description: "",
     url: "https://app.askmyadvisor.co",
     technology: ["Laravel", "React Native", "AWS"],
+    location: "Singapore",
   },
   {
     id: 4,
@@ -36,6 +38,7 @@ const clientsData = [
     description: "",
     url: "https://app.askmyadvisor.co",
     technology: ["Laravel", "React Native", "AWS"],
+    location: "India 🇮🇳",
   },
   {
     id: 5,
@@ -45,6 +48,7 @@ const clientsData = [
     description: "",
     url: "https://app.askmyadvisor.co",
     technology: ["Wordpress", "AWS"],
+    location: "India 🇮🇳",
   },
   {
     id: 6,
@@ -54,6 +58,7 @@ const clientsData = [
     description: "",
     url: "https://app.askmyadvisor.co",
     technology: ["Laravel", "React Native", "AWS"],
+    location: "Kolkata, India",
   },
 ];
 export default clientsData;
