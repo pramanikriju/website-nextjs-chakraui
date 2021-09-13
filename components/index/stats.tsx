@@ -91,8 +91,8 @@ export default function BasicStatistics() {
           icon={<FiServer size={"3em"} />}
         />
         <StatsCard
-          title={"Datacenters"}
-          stat={"7"}
+          title={"Continents"}
+          stat={"4"}
           icon={<GoLocation size={"3em"} />}
         />
       </SimpleGrid>

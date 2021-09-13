@@ -47,7 +47,7 @@ const clientsData = [
     img: "/img/clients/iem.jpg",
     description: "",
     url: "https://app.askmyadvisor.co",
-    technology: ["Wordpress", "AWS"],
+    technology: ["Wordpress", "Google Cloud"],
     location: "India 🇮🇳",
   },
   {

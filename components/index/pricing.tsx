@@ -41,8 +41,8 @@ export default function Pricing() {
           Services that fit your need
         </Heading>
         <Text fontSize="lg" color={"gray.500"}>
-          Start with 14-day free trial. No credit card needed. Cancel at
-          anytime.
+          Start with an one hour consultation. No commitment needed. Guaranteeed
+          solutions.
         </Text>
       </VStack>
       <Stack
@@ -62,10 +62,10 @@ export default function Pricing() {
                 $
               </Text>
               <Text fontSize="5xl" fontWeight="900">
-                79
+                49
               </Text>
               <Text fontSize="3xl" color="gray.500">
-                /month
+                /issue
               </Text>
             </HStack>
           </Box>
@@ -77,15 +77,15 @@ export default function Pricing() {
             <List spacing={3} textAlign="start" px={12}>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="green.500" />
-                unlimited build minutes
+                Fix any issue!
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="green.500" />
-                Lorem, ipsum dolor.
+                Language/Framework agnostic
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="green.500" />
-                5TB Lorem, ipsum dolor.
+                Quick turnaround time
               </ListItem>
             </List>
             <Box w="80%" pt={7}>
@@ -126,7 +126,7 @@ export default function Pricing() {
                   $
                 </Text>
                 <Text fontSize="5xl" fontWeight="900">
-                  50
+                  79
                 </Text>
                 <Text fontSize="3xl" color="gray.500">
                   /hour
@@ -141,23 +141,23 @@ export default function Pricing() {
               <List spacing={3} textAlign="start" px={12}>
                 <ListItem>
                   <ListIcon as={FaCheckCircle} color="green.500" />
-                  unlimited build minutes
+                  One-on-One meeting
                 </ListItem>
                 <ListItem>
                   <ListIcon as={FaCheckCircle} color="green.500" />
-                  Lorem, ipsum dolor.
+                  Architechture planning
                 </ListItem>
                 <ListItem>
                   <ListIcon as={FaCheckCircle} color="green.500" />
-                  5TB Lorem, ipsum dolor.
+                  Handling scale
                 </ListItem>
                 <ListItem>
                   <ListIcon as={FaCheckCircle} color="green.500" />
-                  5TB Lorem, ipsum dolor.
+                  Framework or language choices
                 </ListItem>
                 <ListItem>
                   <ListIcon as={FaCheckCircle} color="green.500" />
-                  5TB Lorem, ipsum dolor.
+                  Cloud Services cost estimations
                 </ListItem>
               </List>
               <Box w="80%" pt={7}>
@@ -193,15 +193,15 @@ export default function Pricing() {
             <List spacing={3} textAlign="start" px={12}>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="green.500" />
-                unlimited build minutes
+                On call advisory
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="green.500" />
-                Lorem, ipsum dolor.
+                Real time support
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="green.500" />
-                5TB Lorem, ipsum dolor.
+                Upto 15 hrs/week of consultation
               </ListItem>
             </List>
             <Box w="80%" pt={7}>
