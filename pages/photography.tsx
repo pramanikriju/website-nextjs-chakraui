@@ -1,7 +1,19 @@
 import { useState, useEffect } from "react";
 import useInView from "react-cool-inview";
 import axios from "axios";
-import { SimpleGrid, Box } from "@chakra-ui/react";
+import {
+  SimpleGrid,
+  Box,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Button,
+} from "@chakra-ui/react";
 import Image from "next/image";
 
 const Photography = () => {
@@ -10,6 +22,13 @@ const Photography = () => {
     process.env.NEXT_PUBLIC_INSTAGRAM_API_URL +
       process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN
   );
+  const [modalImage, setmodalImage] = useState("");
+  const { isOpen, onOpen, onClose, onToggle } = useDisclosure();
+
+  const openModal = (src) => {
+    setmodalImage(src);
+    onToggle();
+  };
 
   const { observe } = useInView({
     // For better UX, we can grow the root margin so the data will be loaded earlier
@@ -48,6 +67,7 @@ const Photography = () => {
             ref={idx === images.length - 1 ? observe : null}
             key={image.id}
             style={{ width: "100%" }}
+            onClick={() => openModal(image.media_url)}
           >
             <Image
               src={image.media_url}
@@ -59,6 +79,29 @@ const Photography = () => {
           </div>
         ))}
       </SimpleGrid>
+      <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Image</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            {" "}
+            <Image
+              src={modalImage}
+              alt="Text caption"
+              height={1000}
+              width={1000}
+              layout="responsive"
+            />
+          </ModalBody>
+
+          <ModalFooter isCentered>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Close
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 };
